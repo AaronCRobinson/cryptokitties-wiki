@@ -1,4 +1,4 @@
-# docker-django-wiki
+# cryptokitties-wiki
 
 Dockerfile and configuration files to create a simple [django-wiki](https://github.com/django-wiki/django-wiki) container.
 ### Installation
