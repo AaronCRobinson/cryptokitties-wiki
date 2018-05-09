@@ -5,12 +5,15 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update \
     && apt-get install -y --force-yes --no-install-recommends \
-	python \
+    python \
     python-imaging \
-	python-pip \
+    python-pip \
+    python-setuptools \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
+
+RUN pip install wheel
 
 RUN pip install wiki
 
