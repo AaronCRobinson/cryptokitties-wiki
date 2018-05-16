@@ -1,11 +1,70 @@
 {% extends "wiki/base_site.html" %}
+{% load sekizai_tags %}
+
+{% block wiki_site_title %}{% endblock %}
 
 {% block wiki_header_branding %}
-<a href="https://www.cryptokitties.co/"><img src="https://www.cryptokitties.co/icons/logo.svg" style="padding:5px"></a>
+
+{% addtoblock "css" %}
+<style>
+.navbar-inverse{
+  background-color:#faf4cf;
+  border-color:#e3daa1;
+}
+.navbar-inverse .navbar-nav
+{
+  color:#222;
+}
+.navbar-inverse .navbar-nav>li>a:hover
+{ 
+  color:#222;
+}
+.navbar-inverse .navbar-nav>.active>a
+{
+  background-color:#e3daa1;
+  color:#222;
+}
+.navbar-inverse .navbar-nav>.active>a:hover
+{
+  background-color:#faf4cf;
+  color:#222;
+}
+.ckicon {
+  padding: 6px;
+  width: 50px;
+}
+.ckicon:hover {
+  padding: 0px 6px 0px;
+  content:url("https://www.cryptokitties.co/icons/logo-hover.gif");
+}
+</style>
+{% endaddtoblock %}
+
+<a href="https://www.cryptokitties.co/" target="_blank">
+<img class="ckicon" src="https://www.cryptokitties.co/icons/logo.svg">
+</a>
+
 {% endblock %}
 
 {% block wiki_header_navlinks %}
+
 <ul class="nav navbar-nav">
   <li class="active"><a href="{% url 'wiki:root' %}">Wiki</a></li>
+  <li><a href="https://cryptokitties411.com/">CryptoKitties 411</a></li>
 </ul>
+
 {% endblock %}
+
+{% block wiki_footer_logo %}
+
+{% addtoblock "css" %}
+<style>.ckwiki-footer{float:right;}.ckwiki-footer img{height:58px;}</style>
+{% endaddtoblock %}
+
+<div class="ckwiki-footer">
+<a href="https://discordapp.com/invite/3GvT66U" target="_blank">
+<img src="https://discordapp.com/assets/2c21aeda16de354ba5334551a883b481.png">
+</a>
+</div>
+{% endblock %}
+
