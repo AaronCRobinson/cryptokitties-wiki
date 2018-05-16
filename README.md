@@ -14,8 +14,7 @@ $ docker run -d -p 80:8000 -v ~/src/testproject/testproject/db:/db:z -v ~/src/te
 ### Backup
 To backup the sqlite db copy it to a local directory or use a persistent volume:
 ```sh
-$ sudo docker run -d -P -v /mydata/db:/db:z --name=django-wiki camandel/django-wiki
-$ echo '.dump' | sqlite3 /mydata/db/db.sqlite3 > /mydata/backup/wiki.dump
+$ echo '.dump' | sqlite3 ~/src/testproject/testproject/db/db.sqlite3 > ~/wiki.dump
 ```
 To restore:
 ```sh
