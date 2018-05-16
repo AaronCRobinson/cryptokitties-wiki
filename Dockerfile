@@ -1,5 +1,5 @@
 FROM debian:latest
-LABEL maintainer "Carlo Mandelli"
+LABEL maintainer "Aaron Robinson"
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -15,7 +15,7 @@ RUN apt-get update \
 
 RUN pip install wheel
 
-RUN pip install wiki
+RUN pip install wiki==0.2.5
 
 ADD testproject /testproject/
 
