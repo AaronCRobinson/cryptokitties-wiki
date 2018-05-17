@@ -11,12 +11,14 @@
   background-color:#faf4cf;
   border-color:#e3daa1;
 }
-.navbar-inverse .navbar-nav
+.navbar-inverse .navbar-nav>li
 {
+  background-color:#faf4cf;
   color:#222;
 }
 .navbar-inverse .navbar-nav>li>a:hover
 { 
+  background-color:#e3daa1;
   color:#222;
 }
 .navbar-inverse .navbar-nav>.active>a
@@ -49,7 +51,7 @@
 {% block wiki_header_navlinks %}
 
 <ul class="nav navbar-nav">
-  <li class="active"><a href="{% url 'wiki:root' %}">Wiki</a></li>
+  <li><a href="{% url 'wiki:root' %}">Wiki</a></li>
   <li><a href="https://cryptokitties411.com/">CryptoKitties 411</a></li>
 </ul>
 
