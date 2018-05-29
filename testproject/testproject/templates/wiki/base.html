@@ -45,6 +45,7 @@ figure.medium table,
 figure.medium table>tbody>tr>td 
 {
   border:0;
+  padding: 4px 8px 4px;
 }
 figure.small {
   width:160px;
@@ -57,6 +58,24 @@ figure.medium {
 }
 figure.medium>img {
   width:350px;
+}
+figure.large {
+  width:610px;
+}
+figure.large>img {
+  width:600px;
+}
+div.article-list,
+div.toc {
+  float:left;
+  margin:0 10px 10px;
+  padding-right: 18px;
+}
+.wiki-article figure.pull-right {
+  clear: right;
+}
+.clearBoth {
+  clear: both;
 }
 </style>
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -79,7 +98,8 @@ gtag('config', 'UA-105317243-2');
 
 <ul class="nav navbar-nav">
   <li><a href="{% url 'wiki:root' %}">Wiki</a></li>
-  <li><a href="https://cryptokitties411.com/">CryptoKitties 411</a></li>
+  <li><a href="https://www.kitty.fyi/" target="_blank">kitty.fyi</a></li>
+  <li><a href="https://kittycalc.co/" target="_blank">KittyCalc.co</a></li>
 </ul>
 
 {% endblock %}
@@ -95,5 +115,19 @@ gtag('config', 'UA-105317243-2');
 <img src="https://discordapp.com/assets/2c21aeda16de354ba5334551a883b481.png">
 </a>
 </div>
+
+{% addtoblock "js" %}
+<script>
+  function parseKittyFYI() {
+    var cls = $(".kittyFYI");
+    if (cls.length != 0) {
+      var pdfPath = cls.html();
+      cls.html(`<iframe src="${pdfPath}" width="980" height="800" frameBorder="0" allowfullscreen></iframe>`);
+    }
+  }
+  $(document).ready(parseKittyFYI);
+</script>
+{% endaddtoblock %}
+
 {% endblock %}
 

@@ -36,7 +36,7 @@ except ImportError:
     from .secret_key import SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -57,7 +57,7 @@ INSTALLED_APPS = [
     'wiki',
     'wiki.plugins.macros',
     'wiki.plugins.help',
-    'wiki.plugins.links',
+#    'wiki.plugins.links',
     'wiki.plugins.images',
     'wiki.plugins.attachments',
     'wiki.plugins.notifications',
@@ -162,14 +162,19 @@ STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media')
 MEDIA_URL = '/media/'
 
+# https://stackoverflow.com/questions/10165638/django-isnt-serving-static-files-getting-404-errors/10165796
 
 WIKI_ANONYMOUS_WRITE = True
 WIKI_ANONYMOUS_CREATE = True
 
-WIKI_MARKDOWN_HTML_ATTRIBUTES = {'a': ['href', 'title', 'class', 'id'], 'abbr': ['title', 'class', 'id'], 'acronym': ['title', 'class', 'id'], 'b': ['class', 'id'], 'blockquote': ['class', 'id'], 'br': ['class', 'id'], 'code': ['class', 'id'], 'dd': ['class', 'id'], 'div': ['class', 'id'], 'dl': ['class', 'id'], 'dt': ['class', 'id'], 'em': ['class', 'id'], 'figcaption': ['class', 'id'], 'figure': ['class', 'id'], 'h0': ['class', 'id'], 'h1': ['class', 'id'], 'h2': ['class', 'id'], 'h3': ['class', 'id'], 'h4': ['class', 'id'], 'h5': ['class', 'id'], 'h6': ['class', 'id'], 'h7': ['class', 'id'], 'hr': ['class', 'id'], 'i': ['class', 'id'], 'img': ['class', 'id', 'src', 'alt'], 'li': ['class', 'id'], 'ol': ['class', 'id'], 'p': ['class', 'id'], 'pre': ['class', 'id'], 'span': ['class', 'id'], 'strong': ['class', 'id'], 'sup': ['class', 'id'], 'table': ['class', 'id'], 'tbody': ['class', 'id'], 'td': ['class', 'id'], 'th': ['class', 'id'], 'thead': ['class', 'id'], 'tr': ['class', 'id'], 'ul': ['class', 'id']}
+# NOTE: potential dangerous
+#WIKI_MARKDOWN_SANITIZE_HTML = False
 
-WIKI_MARKDOWN_HTML_STYLES = ['float']
+WIKI_MARKDOWN_HTML_ATTRIBUTES = {'a': ['href', 'title', 'class', 'id'], 'abbr': ['title', 'class', 'id'], 'acronym': ['title', 'class', 'id'], 'b': ['class', 'id'], 'blockquote': ['class', 'id'], 'br': ['class', 'id'], 'code': ['class', 'id'], 'dd': ['class', 'id'], 'div': ['class', 'id'], 'dl': ['class', 'id'], 'dt': ['class', 'id'], 'em': ['class', 'id'], 'figcaption': ['class', 'id'], 'figure': ['class', 'id'], 'h0': ['class', 'id'], 'h1': ['class', 'id'], 'h2': ['class', 'id'], 'h3': ['class', 'id'], 'h4': ['class', 'id'], 'h5': ['class', 'id'], 'h6': ['class', 'id'], 'h7': ['class', 'id'], 'hr': ['class', 'id'], 'i': ['class', 'id'], 'img': ['class', 'id', 'src', 'alt', 'width', 'height'], 'li': ['class', 'id'], 'ol': ['class', 'id'], 'p': ['class', 'id'], 'pre': ['class', 'id'], 'span': ['class', 'id'], 'strong': ['class', 'id'], 'sup': ['class', 'id'], 'table': ['class', 'id'], 'tbody': ['class', 'id'], 'td': ['class', 'id'], 'th': ['class', 'id'], 'thead': ['class', 'id'], 'tr': ['class', 'id'], 'ul': ['class', 'id'], 'embed': ['src', 'width', 'height']}
 
-WIKI_MARKDOWN_HTML_WHITELIST = ['a', 'abbr', 'acronym', 'b', 'blockquote', 'code', 'em', 'i', 'li', 'ol', 'strong', 'ul', 'figure', 'figcaption', 'br', 'hr', 'p', 'div', 'img', 'pre', 'span', 'sup', 'table', 'thead', 'tbody', 'th', 'tr', 'td', 'dl', 'dt', 'dd', 'h0', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'h7']
+# NOTE: ACR - this does not appear to be working...
+WIKI_MARKDOWN_HTML_STYLES = ['float', 'width', 'height', 'clear']
+
+WIKI_MARKDOWN_HTML_WHITELIST = ['a', 'abbr', 'acronym', 'b', 'blockquote', 'code', 'em', 'i', 'li', 'ol', 'strong', 'ul', 'figure', 'figcaption', 'br', 'hr', 'p', 'div', 'img', 'pre', 'span', 'sup', 'table', 'thead', 'tbody', 'th', 'tr', 'td', 'dl', 'dt', 'dd', 'h0', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'h7', 'embed']
 
 
