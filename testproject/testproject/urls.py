@@ -13,7 +13,7 @@ admin.autodiscover()
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^robots.txt', lambda _: HttpResponse('User-agent: *\nDisallow: /')),
+    url(r'^robots.txt', lambda _: HttpResponse('User-agent: *\nDisallow: /*admin\nDisallow: /*/_edit\nDisallow: /*/_plugin\nDisallow: /*/_settings')),
 ]
 
 # TODO: look into better static hosting
