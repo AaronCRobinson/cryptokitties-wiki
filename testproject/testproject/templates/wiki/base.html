@@ -39,6 +39,10 @@
   padding: 0px 6px 0px;
   content:url("https://www.cryptokitties.co/icons/logo-hover.gif");
 }
+figure.thumbnail {
+  width:22%;
+  min-width:150px;
+}
 figure.small table,
 figure.small table>tbody>tr>td,
 figure.medium table,
@@ -48,34 +52,39 @@ figure.medium table>tbody>tr>td
   padding: 4px 8px 4px;
 }
 figure.small {
-  width:160px;
-}
-figure.small>img {
-  width:150px;
+  width:18%;
+  min-width:100px;
 }
 figure.medium {
-  width:360px;
-}
-figure.medium>img {
-  width:350px;
-}
-figure.large {
-  width:610px;
-}
-figure.large>img {
-  width:600px;
+  width:28%;
+  min-width:200px;
 }
 div.article-list,
 div.toc {
   float:left;
   margin:0 10px 10px;
-  padding-right: 18px;
+  /*padding-right: 18px;*/
 }
 .wiki-article figure.pull-right {
   clear: right;
 }
+.wiki-article .thumbnail-inline {
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 9px;
+}
+.wiki-article .thumbnail-inline>img {
+  max-width: 100%;
+}
 .clearBoth {
   clear: both;
+}
+h2.rainbow {
+  background: linear-gradient(to right, #f3ff03 5%, #5d71ff 25%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #42463445;
 }
 </style>
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -98,7 +107,9 @@ gtag('config', 'UA-105317243-2');
 
 <ul class="nav navbar-nav">
   <li><a href="{% url 'wiki:root' %}">Wiki</a></li>
-  <li><a href="https://www.kitty.fyi/" target="_blank">kitty.fyi</a></li>
+  <li><a href="https://cryptokittydex.com/" target="_blank">CryptoKittydex</a></li>
+  <li><a href="https://ckwallet.online" target="_blank">CK wallet</a></li>
+  <li><a href="https://www.kitty.fyi/" target="_blank">Kitty.fyi</a></li>
   <li><a href="https://kittycalc.co/" target="_blank">KittyCalc.co</a></li>
 </ul>
 
