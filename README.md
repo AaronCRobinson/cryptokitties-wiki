@@ -8,7 +8,8 @@ Forked from [camandel/docker-django-wiki](https://github.com/camandel/docker-dja
 To download
 ```sh
 $ git clone https://github.com/AaronCRobinson/cryptokitties-wiki.git ~/src
-$ docker run -d -p 80:8000 -v ~/src/testproject/testproject/db:/db:z -v ~/src/testproject/testproject/templates:/templates:z -v ~/src/testproject/testproject/settings:/settings:z --name=django-wiki camandel/django-wiki
+$ docker build .
+$ docker run -d -p 80:8000 -v ~/src/testproject/testproject/db:/db:z -v ~/src/testproject/testproject/templates:/templates:z -v ~/src/testproject/testproject/settings:/settings:z -v ~/src/testproject/testproject/media:/wikimedia:z --name=cryptokitties-wiki3 fcc825d3e8ac
 ```
 
 ### Restarting
